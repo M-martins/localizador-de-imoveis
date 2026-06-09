@@ -20,9 +20,14 @@ loginForm.addEventListener("submit", async function (event) {
 
     setLoginMessage("✅ Credenciais validadas com sucesso.", "success");
 
-    setTimeout(() => {
-      alert("Próxima etapa: carregar o mapa.");
-    }, 800);
+setTimeout(async () => {
+  document.getElementById("loginPage").classList.add("hidden");
+  document.getElementById("appContainer").classList.remove("hidden");
+
+  console.log("Chamando initializeMap...");
+  await initializeMap();
+  console.log("Mapa inicializado.");
+}, 800);
 
   } catch (error) {
     loginAttempts++;
