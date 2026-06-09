@@ -95,3 +95,7 @@ body {
 .login-message.error {
   color: #c0392b;
 }
+
+.login-message.info {
+  color: #005f99;
+}
